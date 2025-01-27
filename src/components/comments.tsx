@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface Comment {
   id: number;
@@ -16,6 +16,12 @@ const Comments = ({ postId }: { postId: string }) => {
   ]);
 
   const [newComment, setNewComment] = useState("");
+
+  // Use postId in useEffect as a placeholder for future backend calls
+  useEffect(() => {
+    console.log(`Fetching comments for post ID: ${postId}`);
+    // In a real app, you'd fetch comments from a backend using postId here
+  }, [postId]);
 
   const handleAddComment = () => {
     if (newComment.trim() === "") return;
