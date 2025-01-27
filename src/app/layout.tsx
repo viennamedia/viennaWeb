@@ -42,6 +42,9 @@ export default function RootLayout({
                 <li>
                   <Link href="/blog" className="hover:text-secondary">Blog</Link>
                 </li>
+                <li>
+                  <Link href="/login" className="hover:text-secondary">Login</Link>
+                </li>
               </ul>
             </nav>
           </div>
