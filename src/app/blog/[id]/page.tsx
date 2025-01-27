@@ -3,8 +3,14 @@ import Image from "next/image";
 import { getPostById } from "../posts";
 import CollapseButton from "../../../components/collapseButton"; // Updated path
 
-export default async function PostPage({ params }: { params: { id: string } }) {
-  const post = getPostById(params.id);
+export default async function PostPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params; // Await the params Promise to extract the 'id'
+
+  const post = getPostById(id);
 
   if (!post) {
     notFound();
